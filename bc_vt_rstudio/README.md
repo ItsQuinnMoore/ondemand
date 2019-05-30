@@ -1,10 +1,9 @@
-# Batch Connect - OSC MATLAB
+# Batch Connect - VT-ARC Rstudio
 
 ![GitHub Release](https://img.shields.io/github/release/osc/bc_osc_matlab.svg)
 [![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A Batch Connect app designed for OSC OnDemand that launches MATLAB within an
-Owens batch job.
+A Batch Connect app designed for VT ARC OnDemand that launches Rstudio within an batch job.
 
 ## Prerequisites
 
@@ -12,15 +11,20 @@ This Batch Connect app requires the following software be installed on the
 **compute nodes** that the batch job is intended to run on (**NOT** the
 OnDemand node):
 
-- [MATLAB] R2016b+
 - [Xfce Desktop] 4+
+- [GCC] 7.3.0
+- [openblas] 0.3.6
+- [jdk] 1.8.0
+- [udunits] 2.2.26
+- [R] 3.6.0
+- [Rstudio] 1.1.463
 
 For VNC server support:
 
 - [TurboVNC] 2.1+
 - [websockify] 0.8.0+
 
-For hardware rendering support:
+For hardware rendering support (pending in future releases):
 
 - [X server]
 - [VirtualGL] 2.3+
@@ -44,9 +48,9 @@ Use git to clone this app and checkout the desired branch/version you want to
 use:
 
 ```sh
-scl enable git19 -- git clone <repo>
+git clone <repo>
 cd <dir>
-scl enable git19 -- git checkout <tag/branch>
+git checkout <tag/branch>
 ```
 
 You will not need to do anything beyond this as all necessary assets are
@@ -57,15 +61,15 @@ To update the app you would:
 
 ```sh
 cd <dir>
-scl enable git19 -- git fetch
-scl enable git19 -- git checkout <tag/branch>
+git fetch
+git checkout <tag/branch>
 ```
 
 Again, you do not need to restart the app as it isn't a Passenger app.
 
 ## Contributing
 
-1. Fork it ( https://github.com/OSC/bc_osc_matlab/fork )
+1. Fork it ( https://github.com/rsettlag/bc_vt_rstudio/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
