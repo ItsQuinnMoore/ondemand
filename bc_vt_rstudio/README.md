@@ -11,13 +11,13 @@ This Batch Connect app requires the following software be installed on the
 **compute nodes** that the batch job is intended to run on (**NOT** the
 OnDemand node):
 
-- [Xfce Desktop] 4+
-- [GCC] 7.3.0
-- [openblas] 0.3.6
-- [jdk] 1.8.0
-- [udunits] 2.2.26
-- [R] 3.6.0
-- [Rstudio] 1.1.463
+- [Xfce Desktop] 4+  
+- [GCC] 7.3.0  
+- [openblas] 0.3.6  
+- [jdk] 1.8.0  
+- [udunits] 2.2.26  
+- [R] 3.6.0  
+- [Rstudio] 1.1.463  
 
 For VNC server support:
 
