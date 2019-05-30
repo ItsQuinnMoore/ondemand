@@ -12,7 +12,7 @@ function fix_num_cores() {
     return;
   }
 
-  if(node_type === 'hugemem') {
+  if(node_type === 'largemem') {
     set_ppn_owens_hugemem(num_cores_input);
   } else {
     set_ppn_owens_regular(num_cores_input);
@@ -26,20 +26,27 @@ function fix_num_cores() {
  *
  * @param      {element}  num_cores_input  The input for num_cores
  */
-function set_ppn_owens_hugemem(num_cores_input) {
-  const NUM_CORES = 48;
+function set_ppn_cascades_largemem(num_cores_input) {
+  const NUM_CORES = 72;
   num_cores_input.attr('max', NUM_CORES);
   num_cores_input.attr('min', NUM_CORES);
   num_cores_input.val(NUM_CORES);
 }
 
 /**
- * Sets the PPN limits available for non hugemem Owens nodes.
+ * Sets the PPN limits available for non largemem Cascades nodes.
  *
  * @param      {element}  num_cores_input  The input for num_cores
  */
-function set_ppn_owens_regular(num_cores_input) {
-  const NUM_CORES = 28;
+function set_ppn_cascades_normal(num_cores_input) {
+  const NUM_CORES = 32;
+  num_cores_input.attr('max', NUM_CORES);
+  num_cores_input.attr('min', 1);
+  num_cores_input.val(Math.min(NUM_CORES, num_cores_input.val()));
+}
+
+function set_ppn_cascades_v100_normal(num_cores_input) {
+  const NUM_CORES = 24;
   num_cores_input.attr('max', NUM_CORES);
   num_cores_input.attr('min', 1);
   num_cores_input.val(Math.min(NUM_CORES, num_cores_input.val()));
